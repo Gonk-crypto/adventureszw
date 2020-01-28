@@ -2,10 +2,46 @@
 {% load static %}
 {% block content %}
 
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid star">
     <div class="container">
         <h1 class="display-3" style='text-align:center;'>Experience | Local Gems</h1>
     </div>
+      <div class='herotron'>
+        <img id='herotron-1' class='active' src=" {% static 'app/images/phant.jpg'%}" alt="">
+        <img id='herotron-2' src=" {% static 'app/images/madora.jpg'%}" alt="">
+        <img id='herotron-3' src=" {% static 'app/images/shaves.jpg'%}" alt="">
+        <img id='herotron-4' src=" {% static 'app/images/suns2.jpg'%}" alt="">
+    </div>
+    <script>
+        var current = 0
+        var list = ['herotron-1', 'herotron-2', 'herotron-3', 'herotron-4']
+
+        {% comment %} window.onload = function(){ {% endcomment %}
+            home = this.document.getElementById('herotron-1');
+            if(home){
+                
+                console.log(list[current])
+
+                this.setInterval(function(){
+                
+                var currentImg = document.getElementById(list[current])
+                currentImg.classList.remove('active')
+                document.getElementById(list[(current + 1)]).classList.add('active')
+                if(current == 2){
+                    current = 0
+                }else{
+                    current = current + 1;
+                }
+                console.log(current)
+            }, 3000)    
+            }
+
+            
+            
+
+{% comment %} 
+        } {% endcomment %}
+   </script>
 </div>
 
 <div  style='display:flex;flex-direction:row;justify-content:center;'>
@@ -15,22 +51,15 @@
     <li><a class = "text-white btn primary btn-lg" href="{% url 'app:relax' %}">Relax</a></li>
 </ul>
 
-    <div>
-        <img src="" alt="">
-    </div>
-    <div class=''>
-        <img src="" alt="">
-    </div>
-    <div class=''>
-        <img src="" alt="">
-    </div>
+  
+  
 </div>
 
 <div class="container">
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <img class="card-img-top first" src="{% static 'app/images/elephant.png' %}" alt="">
+                <img class="card-img-top first" src="{% static 'app/images/elephant.jpg' %}" alt="">
             </div>
         </div>
     </div>
@@ -39,12 +68,12 @@
     <div class="row ">
         <div class="col-md-4 col-sm-12">
             <div class="card">
-                <img class="card-img-top second" src="" alt="">
+                <img class="card-img-top second" src="{% static 'app/images/horsing2.jpg'%}" alt="">
             </div>
         </div>
         <div class="col-md-8 col-sm-12">
             <div class="card">
-                <img class="card-img-top third" src="{% static 'app/images/thirsty.png' %}" alt="">
+                <img class="card-img-top third" src="{% static 'app/images/thirsty.jpg' %}" alt="">
             </div>
         </div>
     </div>
@@ -53,12 +82,12 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <img class="card-img-top fourth" src="{% static 'app/images/horsing.png' %}" alt="">
+                <img class="card-img-top fourth" src="{% static 'app/images/rice.jpg' %}" alt="">
             </div>
         </div>
     </div>
 </div>
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid star">
     <div class="container">
         <div class="row">
             <div class="col-12">

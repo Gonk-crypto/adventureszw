@@ -1,5 +1,5 @@
 .primary {
-    background-color: steelblue;
+    background-color: #0F3430;
     color: #eeeeee;
 }
 
@@ -53,10 +53,11 @@
 
 
 .sliding-card h3:hover {
-    color: #155E63;
+    color: #0F3430;
     background-color: #6BA8A9;
     padding: 0.75rem;
     border-radius: 5px;
+    border-color: #ee5500;
 
 }
 
@@ -112,7 +113,11 @@
 }
 
 body {
-    background-color: #e5dfdf;
+    background-color: #0F3430;
+}
+
+.star{
+    background-color: #0F3430;
 }
 
 /* homepage border color from first to fourth */
@@ -155,7 +160,7 @@ body {
 }
 
 .footer-custom {
-    background-color: #1d4d4f;
+    background-color: #0F3430;
     color: #eeeeee;
 
 }
@@ -175,7 +180,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    ju
+    
 }
 
 .footer-social i {
@@ -183,12 +188,12 @@ body {
 }
 
 .nav-custom {
-    background-color: #1d4d4f;
+    background-color: whitesmoke;
     color: #eeeeee;
 }
 
 .nav-custom a {
-    background-color: #1d4d4f;
+    background-color: #0F3430;
     color: #eeeeee;
 }
 
@@ -205,7 +210,7 @@ body {
         top: 30px;
         left: 300px;
         z-index: 1;
-        background-color: #EAE7E7;
+        background-color: #1E2719;
         padding: 20px;
         box-shadow: 5px 10px 30px #aaa;
     }
@@ -302,12 +307,13 @@ body {
     font-weight: 200;
     text-decoration: underline;
     text-align: center;
+    color: #FEF65B;
 }
 
 .shimmer {
-    background-color: #155E63;
-    color: #eee;
-    animation: glimmer 10s ease-in-out infinite;
+    background-color: #0F3430;
+
+    
 }
 
 @keyframes glimmer {
@@ -332,7 +338,7 @@ body {
 }
 
 .relax-card div {
-    background-color: #155E63;
+    background-color: #ee5500;
     height: 100%;
     vertical-align: middle;
     opacity: 0;
@@ -457,8 +463,14 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
+h1 {
+    color: darkgoldenrod;
+}
+
 h2 {
     font-weight: 200;
+    text-decoration: #ee5500;
+    color: darkgoldenrod;
 }
 
 .move-right {
@@ -479,6 +491,7 @@ h2 {
 
 h3 {
     margin: 1rem 0;
+    color: darkgoldenrod;
 }
 
 .detail-image {
@@ -503,4 +516,28 @@ main {
 
 .rounded {
     border-radius: 20px;
+}
+
+
+.herotron {
+    overflow: hidden;
+}
+
+.herotron img {
+    display: none;
+}
+
+.herotron img.active {
+    display: block;
+    animation: zoom 3s linear 1;
+}
+
+
+@keyframes zoom{
+    from{
+        transform: scale(1)
+    }
+    to{
+        transform: scale(1.5)
+    }
 }

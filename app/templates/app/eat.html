@@ -4,7 +4,27 @@
 
 <div class="jumbotron shimmer">
     <h1 class='hero-text'>"Count the memories not the calories."</h1>
+     <div class="row">
+        <div class="col-12">
+            <div class="img-circle-container">
+                <div class='hover-scroll' id="hover-scroll-l">
+                    <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="scroll-area" id='scroll-area'>
+                    <div class='img-circle' style="background-image:url({% static 'app/images/sadza.jpg' %});"></div>
+                    <div class='img-circle' style="background-image:url({% static 'app/images/chibage.jpg' %});"></div>
+                    <div class='img-circle' style="background-image:url({% static 'app/images/zondo.jpg' %});"></div>
+                    <div class='img-circle' style="background-image:url({% static 'app/images/nyama.jpg' %});"></div>
+                    <div class='img-circle' style="background-image:url({% static 'app/images/gango.jpg' %});"></div>
+                    <div class='hover-scroll' id="hover-scroll-r">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <div class="container">
     <div class="row">
@@ -14,30 +34,12 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-12">
-            <div class="img-circle-container">
-                <div class='hover-scroll' id="hover-scroll-l">
-                    <i class="fa fa-angle-left"></i>
-                </div>
-                <div class="scroll-area" id='scroll-area'>
-                    <div class='img-circle' style="background-image:url({% static 'app/images/sadza.png' %});"></div>
-                    <div class='img-circle' style="background-image:url({% static 'app/images/chibage.png' %});"></div>
-                    <div class='img-circle' style="background-image:url({% static 'app/images/zondo.png' %});"></div>
-                    <div class='img-circle' style="background-image:url({% static 'app/images/nyama.png' %});"></div>
-                    <div class='img-circle' style="background-image:url({% static 'app/images/gango.png' %});"></div>
-                    <div class='hover-scroll' id="hover-scroll-r">
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
     <div class="row">
         <div class="col-8">
             <div class='eat-card'>
                 <div class='eat-image'>
-                    <img src="{% static 'app/images/rice.png' %}" alt="">
+                    <img src="{% static 'app/images/rice.jpg' %}" alt="">
                 </div>
                 <div class='eat-text'>
                     <h3><a class='text-color-cards' href="{% url 'app:bookings' pk=1 %}">Authentic local Food</a></h3>
@@ -50,7 +52,7 @@
             <hr class="my-4">
             <div class='eat-card'>
                 <div class='eat-image'>
-                    <img src="{% static 'app/images/gango.png' %}" alt="">
+                    <img src="{% static 'app/images/gango.jpg' %}" alt="">
                 </div>
                 <div class='eat-text'>
                     <h3><a class='text-color-cards' href="{% url 'app:bookings' pk=8 %}">It's A Gango!</a></h3>
