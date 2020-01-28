@@ -38,6 +38,7 @@ if os.path.isfile(dotenv_file):
     os.environ["DATABASE_URL"] = "sqlite:///db.sqlite3"
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -86,8 +87,14 @@ WSGI_APPLICATION = 'mpaso.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'TEST_NAME': os.path.join(BASE_DIR, 'test.sqlite3')
+    }
+}
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -135,5 +142,7 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # This should already be in your settings.py
 django_heroku.settings(locals())
 # This is new
-del DATABASES['default']['OPTIONS']['sslmode']
-
+try:
+    del DATABASES['default']['OPTIONS']['sslmode']
+except:
+    pass
