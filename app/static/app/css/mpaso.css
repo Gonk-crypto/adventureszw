@@ -4,7 +4,7 @@
     --tertiary:#1e2719;
     --quarternary:#2c9c91;
     --quinary:#ee5500;
-
+    --ign:#ff7f50;
 }
 
 .primary {
@@ -21,7 +21,12 @@
 }
 
 .quarternary {
-    background-color: #EAE7E7;
+    background-color: var(--quarternary);
+}
+
+.quinary {
+    background-color: var(--quinary);
+    color: var(--primary)
 }
 
 .adventure-rows {
@@ -97,8 +102,7 @@
 
 .custom-carousel img {
     width: 100%;
-    height: 400px;
-    max-height: 400px;
+    height: auto;
 }
 
 .center {
@@ -297,6 +301,11 @@ body {
     font-size: 4rem;
     color: #eee;
     padding-top: 90px;
+    opacity:0;
+}
+
+.hover-scroll:hover {
+    opacity: 1;
 }
 
 #hover-scroll-l {
@@ -308,10 +317,13 @@ body {
 }
 
 .img-circle {
-    width: 250px;
-    min-width: 250px;
+    width: 250px !important;
+    min-width: 250px !important;
+    max-width: 250px !important;
     margin: 1rem;
-    height: 250px;
+    height: 250px !important;
+    min-height: 250px !important;
+    max-height: 250px !important;
     flex: 1;
     border-radius: 125px;
     background-size: cover;
@@ -329,9 +341,10 @@ body {
 .shimmer {
     background-color: var(--primary);
     color: #eee;
-    animation: glimmer 10s ease-in-out infinite;
+    /* animation: glimmer 10s ease-in-out infinite; */
     background-image: url('/static/app/images/pattern.png');
     background-repeat: repeat;
+    background-image: cover;
 }
 
 .shimmer h1 {
@@ -447,8 +460,8 @@ body {
     color: #155E63;
     background-color: #eee;
     padding: 16px;
-    box-shadow: 0px 2px 4px #155e63,
-                    0px 4px 16px #ccc;
+    /* box-shadow: 0px 2px 4px #155e63, */
+                    /* 0px 4px 16px #ccc; */
     border-radius:  8px;
 }
 
@@ -494,6 +507,7 @@ body {
 .testimonial p{
     text-align: right;
     margin-top: 1rem;
+    color: darkgoldenrod;
 }
 
 .huge {
@@ -508,7 +522,7 @@ body {
 }
 
 h1 {
-    color: darkgoldenrod;
+    color: var(--secondary) !important;
 }
 
 h2 {
@@ -611,9 +625,10 @@ main {
 }
 
 #scaling-carousel {
-    height: 30vh;
+    height: 50vh;
     overflow:hidden;
     position: relative;
+
 }
 
 
@@ -623,7 +638,7 @@ main {
     left: 0;
     top: 0;
     width:100vw !important;
-    height: 30vh;
+    height:50vh !important;
     display: flex;
     align-items: center;
 }
@@ -633,7 +648,7 @@ main {
     z-index: 1;
     position: absolute;
     left:0;
-    top:0;
+    top:-100px;
     width: 100%;
     height:auto;
     animation: scaling-img 5s ease-out;
@@ -651,4 +666,35 @@ main {
     to{
         transform:scale(1.5)
     }
+}
+
+.text-col{
+    color: var(--secondary);
+}
+.text-col2{
+    color: var(--ign);
+}
+
+.back-col{
+    background-color: var(--primary);
+}
+
+.btn-primary {
+    background-color: var(--quinary) !important;
+}
+
+.booking-table {
+    color: var(--secondary) !important;
+}
+
+.card input[type='text'], .card input[type='email']{
+    background: var(--quarternary);
+}
+
+label {
+    color: var(--secondary)
+}
+
+input[type='submit'] {
+    border: 0px!important;
 }

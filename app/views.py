@@ -105,10 +105,11 @@ def add_to_booking(request):
         'adventure': request.POST['adventure'],
         'participants': request.POST['participants'],
         'price': request.POST['price'],
+        'price_total': float(request.POST['price']) * int(request.POST['participants']),
         'adventure_string': Adventure.objects.get(
             pk=request.POST['adventure']).name
     })
     request.session['booking'] = booking
-    request.session['total'] = sum([float(i['price']) for i in booking])
+    request.session['total'] = sum([float(i['price']) * int(i['participants']) for i in booking])
     # print(request.session['booking'])
     return HttpResponse('')

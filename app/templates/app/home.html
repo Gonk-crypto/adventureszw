@@ -3,49 +3,15 @@
 {% block content %}
 
 <div class="jumbotron jumbotron-fluid" id='scaling-carousel'>
-    <img id='img-1' src="{% static 'app/images/elephant.png' %}" alt="" class='scaling-carousel-active'>
-    <img id='img-2' src="{% static 'app/images/domboshava.png' %}" alt="">
-    <img id='img-3' src="{% static 'app/images/thirsty.png' %}" alt="">
-    <img id='img-4' src="{% static 'app/images/nyama.png' %}" alt="">
+    <img id='img-1' src="{% static 'app/images/madora.jpg' %}"  alt="" class='scaling-carousel-active'>
+    <img id='img-2' src="{% static 'app/images/phant.jpg' %}" alt="">
+    <img id='img-3' src="{% static 'app/images/suns.jpg' %}" alt="">
+    <img id='img-4' src="{% static 'app/images/domboshava.jpg' %}" alt="">
     <div >
-        <h1 class="display-3" style='text-align:center;width:100%;color:white;'>Experience | Local Gems</h1>
+        <h1 class="display-3" style='text-align:center;width:100%;'> <strong>Experience | Local Gems </strong></h1>
     </div>
-      <div class='herotron'>
-        <img id='herotron-1' class='active' src=" {% static 'app/images/phant.jpg'%}" alt="">
-        <img id='herotron-2' src=" {% static 'app/images/madora.jpg'%}" alt="">
-        <img id='herotron-3' src=" {% static 'app/images/shaves.jpg'%}" alt="">
-        <img id='herotron-4' src=" {% static 'app/images/suns2.jpg'%}" alt="">
-    </div>
-    <script>
-        var current = 0
-        var list = ['herotron-1', 'herotron-2', 'herotron-3', 'herotron-4']
-
-        {% comment %} window.onload = function(){ {% endcomment %}
-            home = this.document.getElementById('herotron-1');
-            if(home){
-                
-                console.log(list[current])
-
-                this.setInterval(function(){
-                
-                var currentImg = document.getElementById(list[current])
-                currentImg.classList.remove('active')
-                document.getElementById(list[(current + 1)]).classList.add('active')
-                if(current == 2){
-                    current = 0
-                }else{
-                    current = current + 1;
-                }
-                console.log(current)
-            }, 3000)    
-            }
-
-            
-            
-
-{% comment %} 
-        } {% endcomment %}
-   </script>
+      
+    
 </div>
 <script>
     var active = 'img-1'

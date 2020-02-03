@@ -41,7 +41,7 @@ class BookingLine(models.Model):
         pricing = PriceSchedule.objects.get(adventure=self.adventure, 
             participants=self.number_of_participants)
 
-        return pricing.price
+        return pricing.price * self.number_of_participants
 
 
 

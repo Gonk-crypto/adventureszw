@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="jumbotron jumbotron-fluid shimmer">
+<div class="jumbotron jumbotron-fluid shimmer back-col">
     <div class="container">
         <h1 class="display-3">Book Our Adventure!</h1>
     </div>
@@ -13,9 +13,9 @@
         <div class="col-12">
             {% if request.session.booking %}
             
-            <table class="table">
+            <table class="table booking-table">
                 <thead>
-                    <tr class='primary text-white'>
+                    <tr class='primary'>
                         <th>Adventure</th>
                         <th>Participants</th>
                         <th>Price</th>
@@ -26,19 +26,19 @@
                     <tr>
                         <td>{{booking.adventure_string}}</td>
                         <td>{{booking.participants}}</td>
-                        <td>{{booking.price}}</td>
+                        <td>{{booking.price_total}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
                 <tfoot>
-                    <tr class='primary text-white'>
+                    <tr class='primary'>
                         <td colspan='2'>Total</td>
                         <td>{{request.session.total}}</td>
                     </tr>
                 </tfoot>
             </table>
             {% else %}
-            <p>No adventures have been added to your cart yet. Explore our offerings then return to this page!</p>
+            <p class="text-col">No adventures have been added to your cart yet. Explore our offerings then return to this page!</p>
             {% endif %}
 
 
@@ -46,7 +46,7 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <div class="card shadow">
+            <div class="card primary">
                 <div class="card-body">
                     {% crispy form %}
                 </div>

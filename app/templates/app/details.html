@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="jumbotron jumbotron-fluid shadow gap">
+<div class="jumbotron jumbotron-fluid shadow gap primary">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 col-sm-12">
@@ -17,7 +17,7 @@
                 <p class="lead">Book Our Adventure</p>
                 <hr class="my-2">
                 <p>More info</p>
-            <p class='center'>{{object.duration}} hrs | See Price List</p>
+            <p class='center'>{{object.duration}} hrs</p>
             <p>Days available: {{object.days}}</p>
                 <p class="lead center">
                     <p>
@@ -25,13 +25,14 @@
                     </p>
                     <div id='booking-widget'>
                         <div class='participant-widget'>
-                            <button onclick='increment()' class='btn primary'><i class="fa fa-plus" aria-hidden="true"></i></button>
+                            <button onclick='increment()' class='btn quinary'><i class="fa fa-plus" aria-hidden="true"></i></button>
                             <div id='participant-count'>0</div>
-                            <button onclick='decrement()' class='btn primary '><i class="fa fa-minus" aria-hidden="true"></i></button>
+                            <button onclick='decrement()' class='btn quinary '><i class="fa fa-minus" aria-hidden="true"></i></button>
                         </div>
-                        <h4>Price: $<span id='price'></span></h4>
+                        <h4>Price per Person: $<span id='price'></span></h4>
+                        <h4>Total Price: $<span id='price-total'></span></h4>
                         
-                        <button class=' btn primary btn-lg text-white' onclick='addToCart()'>Add to Cart</button>
+                        <button class=' btn quinary btn-lg' onclick='addToCart()'>Add to Cart</button>
                     </div>
                     <p id='booking-string'></p>
                     <script>
@@ -45,7 +46,7 @@
                         }
 
                         function decrement(){
-                            if(count > 0){
+                            if(count != 0){
                             count = count - 1
                             }
                             updatePrice()
@@ -53,11 +54,17 @@
 
                         function updatePrice(){
                             $('#participant-count').text(count)
+                            if(count == 0){
+                                $('#price').text('0')
+                                $('#price-total').text('0')
+                                return null
+                            }
                             $.ajax({
                                 method: 'GET',
                                 'url':'/get-price/{{object.pk}}/' + count + '/'}).done( 
                                 function(data){
                                     $('#price').text(data.price)
+                                    $('#price-total').text(parseFloat(data.price) * count)
                                     price = data.price
                             })
                         }
@@ -85,7 +92,7 @@
 
                     </script>
                     
-                    <a class=' btn primary btn-lg text-white'href="{% url 'app:create-booking'  %}">View Booking</a>
+                    <a class=' btn quinary btn-lg'href="{% url 'app:create-booking'  %}">View Booking</a>
                 </p>
             </div>
         </div>
