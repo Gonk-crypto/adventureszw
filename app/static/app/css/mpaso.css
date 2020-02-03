@@ -220,6 +220,7 @@ body {
 
 .eat-text{
     color: darkgoldenrod;
+    background-color: #1E2719; ;
 }
 @media(min-width:800px) {
 
@@ -251,7 +252,7 @@ body {
         top: 200px;
         left: 50px;
         z-index: 1;
-        background-color: #EAE7E7;
+        background-color: #1E2719;
         padding: 20px;
         /* box-shadow: 5px 10px 30px #aaa; */
     }
@@ -628,9 +629,28 @@ main {
     height: 50vh;
     overflow:hidden;
     position: relative;
-
 }
 
+#scaling-carousel h1 {
+    background-color: rgba(0,0,0,0.25);
+}
+
+@media(max-width:720px) {
+    #scaling-carousel{
+        height:30vh;
+    }
+
+    #scaling-carousel img{
+        top:0 !important;
+    }
+    #scaling-carousel div{
+        height:30vh !important;
+    }
+
+    #scaling-carousel .display-3{
+        font-size: 3rem !important;
+    }
+}
 
 #scaling-carousel div{
     z-index: 100;
@@ -638,7 +658,7 @@ main {
     left: 0;
     top: 0;
     width:100vw !important;
-    height:50vh !important;
+    height:50vh;
     display: flex;
     align-items: center;
 }
