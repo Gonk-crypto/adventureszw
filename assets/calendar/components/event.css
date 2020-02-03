@@ -1,0 +1,20 @@
+.event{
+    position: absolute;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+.eventBox {
+    background-color: #18393B;
+    color: white;
+    padding:2px;
+    box-sizing: border-box;
+    font-size: .9rem;
+    border-right: 1px solid white;
+}
+
+.eventBox:hover{
+    color: #18393B;
+    background-color: white;
+    border: 1px solid #18393B;
+}

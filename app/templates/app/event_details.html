@@ -1,0 +1,28 @@
+{% extends 'window.html' %}
+
+{% block content %}
+
+<div class='event-hero'>
+    <img src="{{object.image.url}}" alt="event image">
+    <div>
+        <div>
+            <h1>{{object.title}}</h1>
+            <p>{{object.date}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <p>{{object.description}}</p>
+        
+        </div>
+        <div class="col-2"></div>
+
+    </div>
+
+</div>
+
+{% endblock content %}

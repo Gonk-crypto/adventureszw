@@ -25,14 +25,14 @@
               <a class="dropdown-item" href="/relax/">RELAX</a>
             </div>
           </li>
-        <li class="nav-item">
-          <a class="nav-link " href="#" ></a>
-        </li>
-        <li class="nav-item">
+        {% comment %} <li class="nav-item">
           <a class="nav-link" href="/pricing/">PRICING</a>
+        </li> {% endcomment %}
+        <li class="nav-item">
+          <a id='events' class="nav-link" href="/calendar/month/2020/1">EVENTS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">EVENTS</a>
+          <a class="nav-link" href="/create-booking/">BOOKING</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/terms/">T's & C's</a>
@@ -40,3 +40,10 @@
       </ul>
     </div>
   </nav>
+  <script>
+    window.onload = function(){
+        var el = document.getElementById('events')
+        var today = new Date()
+        el.href = '/calendar/month/' + today.getFullYear() + '/' + (today.getMonth() +1)
+    }
+  </script>

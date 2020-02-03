@@ -9,7 +9,41 @@
     </div>
 </div>
 <div class="container">
+    <div class="row">
+        <div class="col-12">
+            {% if request.session.booking %}
+            
+            <table class="table">
+                <thead>
+                    <tr class='primary text-white'>
+                        <th>Adventure</th>
+                        <th>Participants</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for booking in request.session.booking  %}
+                    <tr>
+                        <td>{{booking.adventure_string}}</td>
+                        <td>{{booking.participants}}</td>
+                        <td>{{booking.price}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr class='primary text-white'>
+                        <td colspan='2'>Total</td>
+                        <td>{{request.session.total}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+            {% else %}
+            <p>No adventures have been added to your cart yet. Explore our offerings then return to this page!</p>
+            {% endif %}
 
+
+        </div>
+    </div>
     <div class="row">
         <div class="col-12">
             <div class="card shadow">

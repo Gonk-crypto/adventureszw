@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'crispy_forms',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
+
+
 ROOT_URLCONF = 'mpaso.urls'
+DATE_FORMAT = "d/m/Y"
 
 TEMPLATES = [
     {
@@ -142,7 +147,6 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # This should already be in your settings.py
 django_heroku.settings(locals())
 # This is new
-try:
+if DATABASES['default'].get('OPTIONS', None):
     del DATABASES['default']['OPTIONS']['sslmode']
-except:
-    pass
+

@@ -10,12 +10,15 @@
     <link rel="stylesheet" type="text/css" media="screen" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="{% static 'app/css/mpaso.css' %}">
+    <link rel="stylesheet" href="{% static 'app/js/jquery-ui-1.12.1.custom/jquery-ui.theme.css' %}">
+    <link rel="stylesheet" href="{% static 'app/js/jquery-ui-1.12.1.custom/jquery-ui.structure.css' %}">
     <script
-  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="{% static 'app/js/mpaso.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app/js/jquery-ui-1.12.1.custom/jquery-ui.min.js' %}"></script>
     {% block head %}{% endblock %}
 </head>
 <body>
@@ -34,7 +37,14 @@
     </div>
     {% block window %}{% endblock %}
     
-
+    <script>
+        $("input[name='date']").datepicker({
+        changeYear: true,
+        changeMonth: true,
+        dateFormat: 'yy-mm-dd' 
+        });
+    
+    </script>
 
 </body>
 </html>

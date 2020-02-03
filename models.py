@@ -80,3 +80,5 @@ class ServiceLog(models.Model):
     
     def get_absolute_url(self):
         return reverse("vehicleapp:servicedetail", kwargs={"pk": self.pk})
+
+

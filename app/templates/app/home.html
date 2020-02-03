@@ -2,9 +2,13 @@
 {% load static %}
 {% block content %}
 
-<div class="jumbotron jumbotron-fluid star">
-    <div class="container">
-        <h1 class="display-3" style='text-align:center;'><strong style="color: #fef65b">Experience | Local Gems </strong></h1>
+<div class="jumbotron jumbotron-fluid" id='scaling-carousel'>
+    <img id='img-1' src="{% static 'app/images/elephant.png' %}" alt="" class='scaling-carousel-active'>
+    <img id='img-2' src="{% static 'app/images/domboshava.png' %}" alt="">
+    <img id='img-3' src="{% static 'app/images/thirsty.png' %}" alt="">
+    <img id='img-4' src="{% static 'app/images/nyama.png' %}" alt="">
+    <div >
+        <h1 class="display-3" style='text-align:center;width:100%;color:white;'>Experience | Local Gems</h1>
     </div>
       <div class='herotron'>
         <img id='herotron-1' class='active' src=" {% static 'app/images/phant.jpg'%}" alt="">
@@ -43,6 +47,24 @@
         } {% endcomment %}
    </script>
 </div>
+<script>
+    var active = 'img-1'
+    var states = ['img-1', 'img-2', 'img-3', 'img-4']
+    setInterval(function(){
+        var currentEl = document.getElementById(active)
+        currentEl.classList.remove('scaling-carousel-active')
+        var index = states.indexOf(active)
+        if(index == 3){
+            active = 'img-1'
+        }else{
+            active = states[index + 1]
+        }
+
+        currentEl = document.getElementById(active)
+        currentEl.classList.add('scaling-carousel-active')
+    }, 3000)
+
+</script>
 
 <div  style='display:flex;flex-direction:row;justify-content:center;'>
 <ul class="activities">
@@ -102,8 +124,7 @@
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
                             <div class="testimonial"><i class="fas fa-quote-left fa-3x"></i>
-                            <h2>A true adventure with the perfect strangers</h2>
-                            <i class="fas fa-quote-right fa-3x move-right"></i>
+                            <p>A true adventure with the perfect strangers</p>
                             <br>
                                 <p><b>Lisa,</b> <i>China</i></p>
                             
@@ -112,8 +133,8 @@
                         <div class="carousel-item">
                             <div class="testimonial">
                                 <i class="fas fa-quote-left fa-3x"></i>
-                                <h2>Spent a week with adventuresZW. The food was exceptional, the hike tiring, but worth the view.</h2>
-                                <i class="fas fa-quote-right fa-3x move-right"></i>
+                                <p>Spent a week with adventuresZW. The food was exceptional, the hike tiring, but worth the view.</p>
+                                
                                 <br>
                                 <p><b>Jade,</b> <i>Mauritius</i></p>
 
@@ -122,9 +143,8 @@
                         <div class="carousel-item">
                             <div class="testimonial">
                                 <i class="fas fa-quote-left fa-3x"></i> 
-                                <h2>Accommodating and fun. Chose a few events from their calendar.</h2>
+                                <p>Accommodating and fun. Chose a few events from their calendar.</p>
                                 
-                                <i class="fas fa-quote-right fa-3x move-right"></i>
                                 <br>
                                 <p><b>Tristan,</b> <i>Australia</i></p>
                             </div>
@@ -138,6 +158,29 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
+                </div>
+                <div class="wide-testimonials">
+                    <div class="testimonial"><i class="fas fa-quote-left fa-3x"></i>
+                            <p>A true adventure with the perfect strangers</p>
+                            <br>
+                                <p><b>Lisa,</b> <i>China</i></p>
+                            
+                            </div>
+                            <div class="testimonial">
+                                <i class="fas fa-quote-left fa-3x"></i>
+                                <p>Spent a week with adventuresZW. The food was exceptional, the hike tiring, but worth the view.</p>
+                                
+                                <br>
+                                <p><b>Jade,</b> <i>Mauritius</i></p>
+
+                            </div>
+                            <div class="testimonial">
+                                <i class="fas fa-quote-left fa-3x"></i> 
+                                <p>Accommodating and fun. Chose a few events from their calendar.</p>
+                                
+                                <br>
+                                <p><b>Tristan,</b> <i>Australia</i></p>
+                            </div>
                 </div>
             </div>
         </div>

@@ -1,2 +1,54 @@
 {% extends 'window.html' %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid shimmer">
+    <div class="container">
+        <h1 class="display-3">Thanks for your booking!</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <p>Hi, {{object.name}}</p>
+            <p>AdventureZW would like to thank you for your booking.</p>
+            <p>We look forward to taking you on an amazing adventure through our beautiful country. One of our reps will contact you shortly arrange the details of your tour.</p>
+            <p>Regards,</p>
+            <p>AdeventuresZW</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2>Booking Details</h2>
+            <table class="table">
+                <thead>
+                    <tr class="primary text-white">
+                        <th>Adventure</th>
+                        <th>Participants</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for line in object.bookingline_set.all %}
+                        <tr>
+                            <td>{{line.adventure}}</td>
+                            <td>{{line.number_of_participants}}</td>
+                            <td>{{line.subtotal}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan='2'>Total</th>
+                        <th>{{object.total}}</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
 {% load static %}
