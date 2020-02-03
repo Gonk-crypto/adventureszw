@@ -1,10 +1,19 @@
+:root {
+    --primary: #0F3430;
+    --secondary:#fef65b;
+    --tertiary:#1e2719;
+    --quarternary:#2c9c91;
+    --quinary:#ee5500;
+
+}
+
 .primary {
-    background-color: #0F3430;
-    color: #eeeeee;
+    background-color: var(--primary);
+    color: darkgoldenrod !important;
 }
 
 .secondary {
-    background-color: #6BA8A9;
+    background-color: var(--secondary);
 }
 
 .tertiary {
@@ -25,7 +34,7 @@
 .animated-card {
     width: 300px;
     height: 450px;
-    border: 2px solid #155E63;
+    border: 2px solid var(--quinary);
     position: relative;
     margin: 10px;
     overflow:hidden;
@@ -53,8 +62,8 @@
 
 
 .sliding-card h3:hover {
-    color: #0F3430;
-    background-color: #6BA8A9;
+    color: var(--primary);
+    background-color: var(--primary);
     padding: 0.75rem;
     border-radius: 5px;
     border-color: #ee5500;
@@ -112,12 +121,15 @@
     margin: 0px auto;
 }
 
+hr {
+    background-color:#ee5500 ;
+}
 body {
-    background-color: #0F3430;
+    background-color: var(--primary);
 }
 
 .star{
-    background-color: #0F3430;
+    background-color: var(--primary);
 }
 
 /* homepage border color from first to fourth */
@@ -160,13 +172,13 @@ body {
 }
 
 .footer-custom {
-    background-color: #0F3430;
-    color: #eeeeee;
+    background-color: var(--tertiary);
+    color: #fef65b;
 
 }
 
 .footer-custom a {
-    color: #6ba8a9;
+    color: var(--secondary);
     text-decoration: none;
 }
 
@@ -189,18 +201,21 @@ body {
 
 .nav-custom {
     background-color: whitesmoke;
-    color: #eeeeee;
+    color: black !important;
 }
 
 .nav-custom a {
-    background-color: #0F3430;
-    color: #eeeeee;
+    /* background-color: var(--primary); */
+    color: #ff7f50 !important;
 }
 
 .adventure-text {
     color: whitesmoke;
 }
 
+.eat-text{
+    color: darkgoldenrod;
+}
 @media(min-width:800px) {
 
     .eat-text {
@@ -212,7 +227,7 @@ body {
         z-index: 1;
         background-color: #1E2719;
         padding: 20px;
-        box-shadow: 5px 10px 30px #aaa;
+        /* box-shadow: 5px 10px 30px #aaa; */
     }
 
     .eat-card {
@@ -233,7 +248,7 @@ body {
         z-index: 1;
         background-color: #EAE7E7;
         padding: 20px;
-        box-shadow: 5px 10px 30px #aaa;
+        /* box-shadow: 5px 10px 30px #aaa; */
     }
 
     .eat-card {
@@ -311,7 +326,7 @@ body {
 }
 
 .shimmer {
-    background-color: #0F3430;
+    background-color: var(--primary);
 
     
 }
@@ -322,7 +337,7 @@ body {
     }
 
     50% {
-        background-color: #6BA8A9;
+        background-color: var(--secondary);
     }
 
     100% {
@@ -335,6 +350,9 @@ body {
     color: white;
     text-align: center;
     margin: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 
 .relax-card div {
@@ -351,6 +369,7 @@ body {
 
 .relax-card h1 {
     font-size: 12rem;
+    color: white;
 }
 @media(max-width: 800px){
     .simple-relax-card {
@@ -359,7 +378,7 @@ body {
         margin: 1rem;
         border-radius: 5px;
         padding: 1rem;
-        box-shadow: 5px 10px 30px #aaa;
+        /* box-shadow: 5px 10px 30px #aaa; */
     
     }
 }
@@ -371,7 +390,7 @@ body {
         margin: 1rem;
         border-radius: 5px;
         padding: 1rem;
-        box-shadow: 5px 10px 30px #aaa;
+        /* box-shadow: 5px 10px 30px #aaa; */
     
     }
 }
@@ -381,6 +400,7 @@ body {
     flex: 1;
     padding: 2rem;
     margin: 10px;
+    color: goldenrod;
 
 }
 
@@ -445,6 +465,7 @@ body {
 
 .testimonial h2{
     font-family: Arial, Helvetica, sans-serif;
+    color: darkgoldenrod;
 }
 
 .testimonial p{
@@ -470,15 +491,20 @@ h1 {
 h2 {
     font-weight: 200;
     text-decoration: #ee5500;
+    text-decoration: strong;
     color: darkgoldenrod;
 }
 
+.light {
+    background-color: var(--primary);
+    color: darkgoldenrod
+}
 .move-right {
     float: right;
 }
 
 .text-color-cards {
-    color: #155e63;
+    color: darkgoldenrod;
 }
 
 .text-color-cards:hover {
@@ -507,7 +533,7 @@ main {
 }
 
 .shadow {
-    box-shadow: 5px 10px 30px #aaa;
+     box-shadow: 5px 10px 30px #aaa; 
 }
 
 .gap {
